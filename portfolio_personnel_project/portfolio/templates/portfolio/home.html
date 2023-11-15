@@ -1,0 +1,17 @@
+<h1> Mon porfolio </h1>
+{% for projet in projets %}
+
+<h2> {{ projet.titre }} </h2>
+
+<p>{{ projet.description }}</p>
+
+<img src="{{ projet.image.url }}" alt="visuel Rebecca cyberpunk" >
+
+{% if projet.url %}
+
+<a href="{{projet.url}}">Link</a>
+
+{% endif %}
+
+
+{% endfor %}
