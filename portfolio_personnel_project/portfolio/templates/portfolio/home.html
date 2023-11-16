@@ -1,8 +1,12 @@
 <h1> Mon porfolio </h1>
 
+<a href="{% url 'blog:mon_blog' %}">Blog</a>
+<br>
+
 {% load static %}
 
 <a href="{% static 'portfolio/cv.pdf' %}">CV</a>
+<br>
 
 <img src="{% static 'portfolio/cyb.jpg' %}" alt="une image"/>
 

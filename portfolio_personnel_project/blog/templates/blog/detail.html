@@ -1,1 +1,8 @@
-{{ blog.titre }}
+<h1>{{ blog.titre }}</h1>
+
+{% load i18n %}
+{% language 'fr' %}
+<h2>{{ blog.date |date:'j F Y'}}</h2>
+{% endlanguage %}
+
+{{blog.description | safe}}
