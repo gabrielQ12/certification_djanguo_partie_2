@@ -1,3 +1,7 @@
+
+{% extends 'portfolio/base.html' %}
+
+{% block content %}
 <h1>{{ blog.titre }}</h1>
 
 {% load i18n %}
@@ -6,3 +10,7 @@
 {% endlanguage %}
 
 {{blog.description | safe}}
+{% endblock %}
+
+
+

@@ -1,28 +1,27 @@
-<h1> Mon porfolio </h1>
+{% extends 'portfolio/base.html' %}
 
-<a href="{% url 'blog:mon_blog' %}">Blog</a>
-<br>
+{% block content %}
+  <h1>Mon porfolio</h1>
 
-{% load static %}
+  <a href="{% url 'blog:mon_blog' %}">Blog</a>
+  <br />
 
-<a href="{% static 'portfolio/cv.pdf' %}">CV</a>
-<br>
+  {% load static %}
 
-<img src="{% static 'portfolio/cyb.jpg' %}" alt="une image"/>
+  <a href="{% static 'portfolio/cv.pdf' %}">CV</a>
+  <br />
 
-{% for projet in projets %}
+  <img src="{% static 'portfolio/cyb.jpg' %}" alt="une image" />
 
-<h2> {{ projet.titre }} </h2>
+  {% for projet in projets %}
+    <h2>{{ projet.titre }}</h2>
 
-<p>{{ projet.description }}</p>
+    <p>{{ projet.description }}</p>
 
-<img src="{{ projet.image.url }}" alt="visuel Rebecca cyberpunk" >
+    <img src="{{ projet.image.url }}" alt="visuel Rebecca cyberpunk" />
 
-{% if projet.url %}
-
-<a href="{{projet.url}}">Link</a>
-
-{% endif %}
-
-
-{% endfor %}
+    {% if projet.url %}
+      <a href="{{ projet.url }}">Link</a>
+    {% endif %}
+  {% endfor %}
+{% endblock %}
