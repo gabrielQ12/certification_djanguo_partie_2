@@ -1,4 +1,11 @@
 <h1> Mon porfolio </h1>
+
+{% load static %}
+
+<a href="{% static 'portfolio/cv.pdf' %}">CV</a>
+
+<img src="{% static 'portfolio/cyb.jpg' %}" alt="une image"/>
+
 {% for projet in projets %}
 
 <h2> {{ projet.titre }} </h2>
